@@ -28,7 +28,7 @@ server.use(session({
   cookie: {
     maxAge: 1 * 24 * 60 * 60 * 1000,
     secure: false,
-    httpOnly: false,
+    httpOnly: true,
   },
   rolling: true,
   resave: false,
@@ -38,7 +38,7 @@ server.use(session({
     tablename: 'sessions',
     sidfieldname: 'sid',
     createtable: true,
-    clearInterval: 1000 * 60 * 60,
+    clearInterval: 1000 * 60 * 10,
   }),
 }))
 
